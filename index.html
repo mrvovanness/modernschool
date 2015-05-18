@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Modernschool by mrvovanness</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Modernschool</h1>
+        <p>Modern tool for remote education</p>
+
+        <p class="view"><a href="https://github.com/mrvovanness/ModernSchool">View the Project on GitHub <small>mrvovanness/ModernSchool</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/mrvovanness/ModernSchool/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/mrvovanness/ModernSchool/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/mrvovanness/ModernSchool">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>
+<a id="hi-there-go-to-the-development-pages-of-modern-school" class="anchor" href="#hi-there-go-to-the-development-pages-of-modern-school" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hi there, go to the development pages of Modern School</h3>
+
+<h3>
+<a id="table-attributes-and-associations" class="anchor" href="#table-attributes-and-associations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Table Attributes and associations</h3>
+
+<p>We use this image as reference for database and models design:
+<img src="http://storage4.static.itmages.com/i/15/0518/h_1431963506_6296814_54f5e03736.png" alt="Database and models design"></p>
+
+<h3>
+<a id="this-simple-text-representation-of-above-image" class="anchor" href="#this-simple-text-representation-of-above-image" aria-hidden="true"><span class="octicon octicon-link"></span></a>This simple text representation of above image</h3>
+
+<pre><code>Users
+    email
+    encrypted_password
+    salt    
+    first_name
+    second_name
+Teachers
+    email
+    encrypted_password
+    salt
+    first_name
+    second_name
+    biography
+    about
+Exams
+    teacher_id( belongs_to Teacher)
+    date
+    exam_title
+    description
+Exams_Students
+    student_id( has_many_and_belongs_to)
+    exam_id
+Posts
+    teacher_id( belongs_to Teacher)
+    title
+    body
+Courses
+    teacher_id( belongs_to Teacher)
+    title
+    description
+Lessons
+    course_id( belongs_to Course)
+    title
+    content
+Comments
+    commentable_id (polymorphic)
+    commenable_type
+    body
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/mrvovanness">mrvovanness</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
