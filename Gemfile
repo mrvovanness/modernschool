@@ -46,3 +46,4 @@ group :development, :test do
   gem 'simple_form'
   gem 'rails-i18n'
 end
+gem 'twitter-bootstrap-rails'
