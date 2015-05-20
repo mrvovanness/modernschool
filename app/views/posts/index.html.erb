@@ -2,10 +2,10 @@
 
   <% @posts.each do |post| %>
     <div class="well well-lg">
-      <h2><%= post.title %></h2>
+      <h3><%= post.title %></h3>
       <p><%= post.body %></p>
-      <% if current_user.teacher? %>
-        <%= link_to t('links.show'), post %>
+      <%= link_to t('links.show'), post %>
+      <% if policy(post).update? %>
         <%= link_to t('links.edit'), edit_post_path(post) %>
       <% end %>
     </div>

@@ -1,5 +1,5 @@
-<h1><%= t('views.posts.add_post') %></h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', posts_path %>
+<h2><%= t('views.posts.add_post') %></h2>
+<% if policy(@post).create? %>
+  <%= render 'form' %>
+  <%= link_to 'Back', posts_path %>
+<% end %>

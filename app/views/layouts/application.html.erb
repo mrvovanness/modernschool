@@ -35,7 +35,7 @@
       <%= menu_item t('navbar.logout'), destroy_user_session_path, method: :delete %>
       <% if current_user.teacher? %>
         <%= drop_down t('navbar.add') do %>
-          <%= menu_item t('navbar.add_news') %>
+          <%= menu_item t('navbar.add_news'), new_post_path %>
           <%= menu_item t('navbar.add_lesson') %>
           <%= menu_item t('navbar.add_exam') %>
           <% end %>  
