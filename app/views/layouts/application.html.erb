@@ -21,19 +21,28 @@
   <%= nav_bar static: :top, brand: t('navbar.logo'), responsive: true do %>
     <%= menu_group do %>
       <% if current_user %>
-        <%= menu_item t('navbar.schedule'), root_path %>
-        <%= menu_item t('navbar.lessons'), root_path %>
-        <%= menu_item t('navbar.teachers'), root_path %>
+        <%= menu_item t('navbar.schedule') %>
+        <%= menu_item t('navbar.lessons') %>
+        <%= menu_item t('navbar.teachers') %>
       <% else %>
-        <%= menu_item t('navbar.sign_in'), new_session_path(resource_name) %>
-        <%= menu_item t('navbar.sign_up'), new_registration_path(resource_name) %>
+        <%= menu_item t('navbar.sign_in'), new_user_session_path %>
+        <%= menu_item t('navbar.sign_up'), new_user_registration_path %>
       <% end %>
     <% end %>
+
     <%= menu_group pull: :right do %>
-      <% if current_user %>
-        <%= menu_item t('navbar.logout'), destroy_user_session_path, method: :delete %>
+    <% if current_user %>
+      <%= menu_item t('navbar.logout'), destroy_user_session_path, method: :delete %>
+      <% if current_user.teacher? %>
+        <%= drop_down t('navbar.add') do %>
+          <%= menu_item t('navbar.add_news') %>
+          <%= menu_item t('navbar.add_lesson') %>
+          <%= menu_item t('navbar.add_exam') %>
+          <% end %>  
+        <% end %>
       <% end %>
     <% end %>
+
   <% end %>
 
     <div class="container">

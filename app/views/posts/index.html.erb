@@ -1,0 +1,12 @@
+<h2><%= t('views.posts.news_feed') %></h2>
+
+  <% @posts.each do |post| %>
+    <div class="well well-lg">
+      <h2><%= post.title %></h2>
+      <p><%= post.body %></p>
+      <% if current_user.teacher? %>
+        <%= link_to t('links.show'), post %>
+        <%= link_to t('links.edit'), edit_post_path(post) %>
+      <% end %>
+    </div>
+  <% end %>
