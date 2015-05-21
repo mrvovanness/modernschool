@@ -13,3 +13,4 @@
 # gemset
 .rvmrc
 /tags
+/.rspec

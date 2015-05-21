@@ -1,8 +1,9 @@
-# Libraries for markdown
-require 'redcarpet'
-require 'syntax_highlighter'
-
 class Post < ActiveRecord::Base
-  belongs_to :user
-  validates :title, :body, :user_id, presence: true 
+  include RichFormatting
+
+  belongs_to :teacher, class_name: "User"
+  validates :title, :body_html, :body_markdown, :user_id, presence: true 
+
+  formatted_fields body_html: :body_markdown
+
 end
