@@ -12,6 +12,22 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require turbolinks
+//= require twitter/bootstrap
 //= require_tree .
+//= require 'epiceditor'
+
+// $(document).ready(function() {
+
+$(document).on("ready page:load", function() { documentReady() })
+function documentReady() {
+  if ($("#epiceditor_textarea").length > 0) {
+    var editor = new EpicEditor({
+      textarea: "epiceditor_textarea",
+      theme: {
+        preview: '/assets/application.css'
+      },
+      clientSideStorage: false
+    }).load();
+  }
+}
