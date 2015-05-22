@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+time {
+  color: #50B4EB;
+}

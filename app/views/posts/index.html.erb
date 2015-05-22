@@ -1,12 +1,20 @@
-<h2><%= t('views.posts.news_feed') %></h2>
+<%= page_header t('views.posts.news_feed') %>
 
-  <% @posts.each do |post| %>
-    <div class="well well-lg">
-      <h3><%= post.title %></h3>
-      <p><%= post.body_html.html_safe %></p>
-      <%= link_to t('links.show'), post %>
-      <% if policy(post).update? %>
-        <%= link_to t('links.edit'), edit_post_path(post) %>
-      <% end %>
+<% @posts.each do |post| %>
+  <div class="row well well-lg">
+    <div class="col-sm-3">
+      <%= image_tag post.picture_url(:thumb), class: 'img-rounded' %>
     </div>
-  <% end %>
+    <div class="col-sm-9">
+      <h3><%= link_to post.title, post %></h3>
+      <time><%= l(post.created_at, format: '%-d %B %Y') %></time>
+      <p><%= truncate_html(post.body_html) %></p>
+      <div class="btn-group">
+        <%= link_to t('links.show'), post, class: 'btn btn-default' %>
+        <% if policy(post).update? %>
+          <%= link_to t('links.edit'), edit_post_path(post), class: 'btn btn-info' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

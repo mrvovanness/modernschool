@@ -1,6 +1,11 @@
+<%= page_header @post.title %>
+
 <div class="well well-lg">
-  <h3><%= @post.title %></h3>
-  <p><%= @post.body_html.html_safe %></p>
+  <%= image_tag @post.picture_url, class: 'img-rounded' %>
+  <%= @post.body_html.html_safe %>
+  <% if @post.document.present? %>
+    <%= link_to t('links.download_file'), @post.document_url %>
+  <% end %>
 </div>
 
 <% if policy(@post).update? %>

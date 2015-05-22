@@ -1,12 +1,15 @@
-<%= simple_form_for(@post) do |f| %>
+<%= simple_form_for @post, html: { multipart: true } do |f| %>
   <%= f.error_notification %>
-   
 
   <div class="form-inputs">
     <%= f.input :title, autofocus: true %>
-    <%= f.input_field :body_markdown, as: :hidden, id: "epiceditor_textarea" %>
     <div id="epiceditor"></div>
     <%= f.input_field :user_id, as: :hidden, value: current_user.id %>
+    <%= f.input_field :body_markdown, as: :hidden, id: "epiceditor_textarea" %>
+    <%= f.file_field :picture %><br>
+    <%= f.hidden_field :picture_cache %>
+    <%= f.file_field :document %><br>
+    <%= f.hidden_field :document_cache %>
   </div><br>
 
   <div class="form-actions">
