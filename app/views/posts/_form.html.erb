@@ -3,16 +3,34 @@
 
   <div class="form-inputs">
     <%= f.input :title, autofocus: true %>
+
+    <%= label_tag t('simple_form.labels.post.body') %>
     <div id="epiceditor"></div>
     <%= f.input_field :user_id, as: :hidden, value: current_user.id %>
-    <%= f.input_field :body_markdown, as: :hidden, id: "epiceditor_textarea" %>
+    <%= f.input_field :body_markdown, as: :hidden, id: "epiceditor_textarea" %><br>
+
+    <%= label_tag t('simple_form.labels.post.picture') %>
     <%= f.file_field :picture %><br>
     <%= f.hidden_field :picture_cache %>
+    
+    <% if @post.picture? %>
+      <%= label_tag t('simple_form.labels.post.remove_picture') %>
+      <%= image_tag @post.picture_url(:thumb), class: 'img-thumbnail' %><br>
+      <%= f.check_box :remove_picture %><br>
+    <% end %>
+
+    <%= label_tag t('simple_form.labels.post.attachment') %>
     <%= f.file_field :document %><br>
     <%= f.hidden_field :document_cache %>
-  </div><br>
+
+    <% if @post.document? %>
+      <%= label_tag t('simple_form.labels.post.remove_attachment') %>
+      <%= f.check_box :remove_document %><br>
+    <% end %>
+  </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
-  </div>
+    <%= link_to t('links.back'), posts_path, class: 'btn btn-default' %>
+  </div><br>
 <% end %>

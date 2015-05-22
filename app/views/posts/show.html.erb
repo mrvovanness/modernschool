@@ -1,7 +1,7 @@
 <%= page_header @post.title %>
 
 <div class="well well-lg">
-  <%= image_tag @post.picture_url, class: 'img-rounded' %>
+  <%= image_tag @post.picture_url, class: 'center-block img-rounded' %>
   <%= @post.body_html.html_safe %>
   <% if @post.document.present? %>
     <%= link_to t('links.download_file'), @post.document_url %>

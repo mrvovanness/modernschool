@@ -1,0 +1,16 @@
+ru:
+  simple_form:
+    labels:
+      user:
+        email: "Твоя почта"
+        password: "Твой пароль"
+        password_confirmation: "Повтори пароль"
+        role: "Учитель или студент?"
+        remember_me: "Запомнить меня"
+      post:
+        title: "Заголовок"
+        body: "* Текст"
+        picture: "Картинка к новости"
+        remove_picture: "Удалить картинку"
+        attachment: "Прикрепить документ"
+        remove_attachment: "Удалить документ"

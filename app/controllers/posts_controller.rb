@@ -73,6 +73,7 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:user_id, :title, :body_markdown,
                                  :picture, :picture_cache,
-                                 :document, :document_cache)
+                                 :document, :document_cache,
+                                 :remove_picture, :remove_document)
   end
 end
