@@ -2,7 +2,7 @@
 <% if policy(@post).update? %>
   <%= render 'form' %>
 
-  <%= link_to t('links.show'), @post %> |
-  <%= link_to t('links.back'), posts_path %>
-  <%= link_to t('links.destroy'), post_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <%= link_to t('links.destroy'), post_path, method: :delete,
+    data: { confirm: 'Hey, sure?' },
+    class: 'btn btn-danger' %></td>
 <% end %>

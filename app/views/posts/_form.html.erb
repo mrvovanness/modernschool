@@ -14,8 +14,8 @@
     <%= f.hidden_field :picture_cache %>
     
     <% if @post.picture? %>
+      <%= image_tag @post.picture_url(:thumb), class: 'img-rounded' %><br>
       <%= label_tag t('simple_form.labels.post.remove_picture') %>
-      <%= image_tag @post.picture_url(:thumb), class: 'img-thumbnail' %><br>
       <%= f.check_box :remove_picture %><br>
     <% end %>
 
