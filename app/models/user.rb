@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
 
   # Associations
   has_many :posts
+  has_many :courses
+  has_many :lessons, through: :courses
 end

@@ -1,0 +1,10 @@
+<%= page_header @course.title %>
+
+<div class="well well-lg">
+  <%= @course.description %>
+</div>
+
+<% if policy(@course).update? %>
+  <%= link_to t('links.edit'), edit_course_path(@course) %> |
+<% end %>
+<%= link_to t('links.back'), courses_path %>

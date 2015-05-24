@@ -22,7 +22,7 @@
     <%= menu_group do %>
       <% if current_user %>
         <%= menu_item t('navbar.schedule') %>
-        <%= menu_item t('navbar.lessons') %>
+        <%= menu_item t('navbar.courses'), courses_path %>
         <%= menu_item t('navbar.teachers') %>
       <% else %>
         <%= menu_item t('navbar.sign_in'), new_user_session_path %>
@@ -36,6 +36,7 @@
       <% if current_user.has_role?(:teacher) %>
         <%= drop_down t('navbar.add') do %>
           <%= menu_item t('navbar.add_news'), new_post_path %>
+          <%= menu_item t('navbar.add_course'), new_course_path %>
           <%= menu_item t('navbar.add_lesson') %>
           <%= menu_item t('navbar.add_exam') %>
           <% end %>

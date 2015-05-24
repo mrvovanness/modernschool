@@ -1,0 +1,13 @@
+<%= page_header t('views.courses.all_courses') %>
+
+<% @courses.each do |course| %>
+  <div class="row well well-lg">
+      <h3><%= link_to course.title, course %></h3>
+      <time><%= l(course.created_at, format: '%-d %B %Y') %></time>
+      <p><%= course.description %></p>
+      <%= link_to t('links.show'), course, class: 'btn btn-default' %>
+      <% if policy(course).update? %>
+        <%= link_to t('links.edit'), edit_course_path(course), class: 'btn btn-info' %>
+      <% end %>
+  </div>
+<% end %>
