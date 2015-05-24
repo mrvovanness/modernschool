@@ -1,8 +1,8 @@
-<h1><%= t('views.posts.edit_news') %></h1>
+<%= page_header t('views.posts.edit_news') %>
 <% if policy(@post).update? %>
   <%= render 'form', post: @post %>
 
   <%= link_to t('links.destroy'), post_path, method: :delete,
     data: { confirm: 'Hey, sure?' },
-    class: 'btn btn-danger' %></td>
+    class: 'btn btn-danger' %>
 <% end %>
