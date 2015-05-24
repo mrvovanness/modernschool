@@ -33,12 +33,12 @@
     <%= menu_group pull: :right do %>
     <% if current_user %>
       <%= menu_item t('navbar.logout'), destroy_user_session_path, method: :delete %>
-      <% if current_user.teacher? %>
+      <% if current_user.has_role?(:teacher) %>
         <%= drop_down t('navbar.add') do %>
           <%= menu_item t('navbar.add_news'), new_post_path %>
           <%= menu_item t('navbar.add_lesson') %>
           <%= menu_item t('navbar.add_exam') %>
-          <% end %>  
+          <% end %>
         <% end %>
       <% end %>
     <% end %>
@@ -58,11 +58,6 @@
         </div>
         <div class="col-lg-3">
           <div class="well sidebar-nav">
-            <% if false %>
-              <h3><%= t('sidebar.header') %></h3>
-            <% # else %>
-              <h3><%= t('sidebar.welcome_message') %></h3>
-            <% end %>
           </div>
         </div>
       </div><!--/row-->

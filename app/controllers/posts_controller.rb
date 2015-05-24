@@ -11,9 +11,11 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    redirect_to posts_path unless policy(@post).create?
   end
 
   def edit
+    redirect_to posts_path unless policy(@post).update?
   end
 
   def create

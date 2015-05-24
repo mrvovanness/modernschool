@@ -2,7 +2,7 @@ class DocumentUploader < CarrierWave::Uploader::Base
   storage = :fog
 
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "modernschool/#{model.class.to_s.underscore.pluralize}/#{mounted_as.to_s.pluralize}/#{model.id}"
   end
 
   def extension_white_list

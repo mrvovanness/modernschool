@@ -1,4 +1,4 @@
-<%= simple_form_for @post, html: { multipart: true } do |f| %>
+<%= simple_form_for post, html: { multipart: true } do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -12,9 +12,9 @@
     <%= label_tag t('simple_form.labels.post.picture') %>
     <%= f.file_field :picture %><br>
     <%= f.hidden_field :picture_cache %>
-    
-    <% if @post.picture? %>
-      <%= image_tag @post.picture_url(:thumb), class: 'img-rounded' %><br>
+
+    <% if post.picture? %>
+      <%= image_tag post.picture_url(:thumb), class: 'img-rounded' %><br>
       <%= label_tag t('simple_form.labels.post.remove_picture') %>
       <%= f.check_box :remove_picture %><br>
     <% end %>
@@ -23,14 +23,14 @@
     <%= f.file_field :document %><br>
     <%= f.hidden_field :document_cache %>
 
-    <% if @post.document? %>
+    <% if post.document? %>
       <%= label_tag t('simple_form.labels.post.remove_attachment') %>
       <%= f.check_box :remove_document %><br>
     <% end %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
     <%= link_to t('links.back'), posts_path, class: 'btn btn-default' %>
   </div><br>
 <% end %>

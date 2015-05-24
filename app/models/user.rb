@@ -1,13 +1,11 @@
 class User < ActiveRecord::Base
-  # Include default devise modules
+  # Devise authorization
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # Roles for users (models/role.rb)
+  rolify
+
   # Associations
   has_many :posts
-
-  # Model methods
-  def teacher?
-    role == "teacher"
-  end
 end
