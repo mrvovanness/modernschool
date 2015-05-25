@@ -1,0 +1,24 @@
+
+<%= simple_form_for lesson, html: { multipart: true } do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title, autofocus: true %>
+
+    <%= f.association :course, collection: current_user.courses.all, include_blank: false %>
+    <%= f.input :description %><br>
+
+    <%= label_tag t('simple_form.labels.lesson.video') %>
+    <%= f.file_field :video %><br>
+    <%= f.hidden_field :video_cache %>
+
+    <% if lesson.video? %>
+      <%= label_tag t('simple_form.labels.lesson.remove_video') %>
+      <%= f.check_box :remove_video %><br>
+    <% end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  </div><br>
+<% end %>

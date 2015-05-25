@@ -1,0 +1,12 @@
+<%= page_header @lesson.title %>
+
+<div class="well well-lg">
+  <%= video_tag @lesson.video_url, controls: true %>
+  <p><%= @lesson.description %></p>
+  <time><%= l(@lesson.created_at, format: '%-d %B %Y') %></time><br>
+
+  <% if policy(@lesson).update? %>
+    <%= link_to t('links.edit'), edit_lesson_path(@lesson) %> |
+  <% end %>
+  <%= link_to t('links.back'), course_path(@lesson.course_id) %>
+</div>

@@ -13,7 +13,6 @@
     <![endif]-->
 
     <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
     <%= javascript_include_tag "application" %>
   </head>
 
@@ -37,7 +36,7 @@
         <%= drop_down t('navbar.add') do %>
           <%= menu_item t('navbar.add_news'), new_post_path %>
           <%= menu_item t('navbar.add_course'), new_course_path %>
-          <%= menu_item t('navbar.add_lesson') %>
+          <%= menu_item t('navbar.add_lesson'), new_lesson_path %>
           <%= menu_item t('navbar.add_exam') %>
           <% end %>
         <% end %>

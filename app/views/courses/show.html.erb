@@ -1,7 +1,13 @@
 <%= page_header @course.title %>
 
 <div class="well well-lg">
-  <%= @course.description %>
+  <p><%= @course.description %></p>
+  <strong><%= t('views.courses.lessons_of_the_course') %></strong>
+  <ul>
+  <% @lessons.each do |lesson| %>
+    <li><%= link_to lesson.title, lesson_path(lesson) %></li>
+  <% end %>
+  <ul>
 </div>
 
 <% if policy(@course).update? %>

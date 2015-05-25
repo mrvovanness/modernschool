@@ -16,3 +16,7 @@
 time {
   color: #50B4EB;
 }
+video {
+  width: 100%;
+  height: auto;
+}

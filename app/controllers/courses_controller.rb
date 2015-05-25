@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
   end
 
   def show
-    @lessons = @course.lessons.order(:created_at)
+    @lessons = @course.lessons.all
   end
 
   def new

@@ -1,0 +1,9 @@
+<%= page_header t('views.lessons.edit_lesson') %>
+<% if policy(@lesson).update? %>
+  <%= render 'form', lesson: @lesson %>
+
+  <%= link_to t('links.back'), lesson_path(id: @lesson.id), class: 'btn btn-default' %>
+  <%= link_to t('links.destroy'), lesson_path, method: :delete,
+    data: { confirm: 'Hey, sure?' },
+    class: 'btn btn-danger' %>
+<% end %>
