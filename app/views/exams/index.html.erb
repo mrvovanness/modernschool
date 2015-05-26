@@ -1,0 +1,17 @@
+<%= page_header t('views.exams.all_exams') %>
+<table class="table table-stripped">
+  <tr>
+    <th><%= t('views.exams.title') %></th>
+    <th><%= t('views.exams.date') %></th>
+    <th colspan="1"></th>
+  </tr>
+  <% @exams.each do |exam| %>
+    <tr>
+      <td><%= link_to exam.title, exam %></td>
+      <td><time><%= l(exam.date, format: '%-d %B %Y %H:%M') %></time></td>
+      <% if policy(exam).update? %>
+        <td><%= link_to t('links.edit'), edit_exam_path(exam), class: 'btn btn-info' %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

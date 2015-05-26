@@ -1,0 +1,11 @@
+<%= page_header @exam.title %>
+
+<div class="well well-lg">
+  <time><%= l(@exam.date, format: '%-d %B %Y %H:%M') %></time>
+  <p><%= @exam.description %></p>
+</div>
+
+<% if policy(@exam).update? %>
+  <%= link_to t('links.edit'), edit_exam_path(@exam), class: 'btn btn-info' %>
+<% end %>
+<%= link_to t('links.back'), exams_path, class: 'btn btn-default' %>

@@ -15,7 +15,7 @@ class LessonsController < ApplicationController
   end
 
   def create
-    @lesson = Lesson.new(lesson_params)
+    @lesson = current_user.lessons.new(lesson_params)
     authorize @lesson
     if @lesson.save
       flash[:notice] = t('flash.success')
@@ -37,7 +37,7 @@ class LessonsController < ApplicationController
 
   def destroy
     @lesson.destroy
-    redirect_to lessons_url
+    redirect_to lessons_path
     flash[:notice] = t('flash.destroyed')
   end
 

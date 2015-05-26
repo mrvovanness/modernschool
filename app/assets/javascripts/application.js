@@ -17,7 +17,7 @@
 //= require_tree .
 //= require 'epiceditor'
 
-$(document).on("ready page:load", function() { 
+$(document).on("ready page:load", function() {
   if ($("#epiceditor_textarea").length > 0) {
     var editor = new EpicEditor({
       textarea: "epiceditor_textarea",

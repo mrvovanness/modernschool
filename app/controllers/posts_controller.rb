@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.new(post_params)
     authorize @post
     if @post.save
       flash[:notice] = t('flash.success')
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to posts_url
+    redirect_to posts_path
     flash[:notice] = t('flash.destroyed')
   end
 
@@ -52,7 +52,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:user_id, :title, :body_markdown,
+    params.require(:post).permit(:title, :body_markdown,
                                  :picture, :picture_cache,
                                  :document, :document_cache,
                                  :remove_picture, :remove_document)

@@ -1,0 +1,13 @@
+<%= page_header t('views.teachers.all_teachers') %>
+
+<% @teachers.each do |teacher| %>
+  <div class="row well well-lg">
+    <div class="col-sm-3">
+      <%= image_tag teacher.avatar_url, class: 'img-rounded' %>
+    </div>
+    <div class="col-sm-9">
+      <h3><%= link_to teacher.full_name, user_profile_path(teacher) %></h3>
+      <p><%= truncate(teacher.biography, length: 350) %></p>
+    </div>
+  </div>
+<% end %>

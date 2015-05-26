@@ -1,8 +1,9 @@
 FactoryGirl.define do
-  factory :lesson do
+    factory :lesson do
     title "MyString"
-description "MyText"
-course_id 1
+    description "MyText"
+    video "uploads/1"
+    course
   end
 
 end

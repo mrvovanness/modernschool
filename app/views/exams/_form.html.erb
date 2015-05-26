@@ -1,13 +1,13 @@
-<%= simple_form_for course do |f| %>
+<%= simple_form_for exam, html: { multipart: true } do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :title, autofocus: true %>
     <%= f.input :description %><br>
-  </div>
+    <%= f.input_field :date %>
+  </div><br>
 
   <div class="form-actions">
     <%= f.button :submit, class: 'btn btn-primary' %>
-    <%= link_to t('links.back'), courses_path, class: 'btn btn-default' %>
   </div><br>
 <% end %>

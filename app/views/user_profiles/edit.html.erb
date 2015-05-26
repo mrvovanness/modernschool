@@ -1,0 +1,54 @@
+<%= page_header t('views.user_profiles.my_profile') %>
+<%= simple_form_for current_user, url: user_profile_path, html: { class: "form-horizontal" } do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group">
+    <%= f.label :first_name, class: 'col-sm-3' %>
+    <div class="col-sm-9">
+      <%= f.input_field :first_name, autofocus: true, class: 'form-control' %><br>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :second_name, class: 'col-sm-3' %>
+    <div class="col-sm-9">
+      <%= f.input_field :second_name, class: 'form-control' %><br>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :biography, class: 'col-sm-3' %>
+    <div class="col-sm-9">
+      <%= f.input_field :biography, class: 'form-control' %><br>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :about, class: 'col-sm-3' %>
+    <div class="col-sm-9">
+      <%= f.input_field :about, class: 'form-control' %><br>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-3">
+      <label><%= t('simple_form.labels.user.your_avatar') %></label>
+    </div>
+    <div class="col-sm-9">
+      <%= image_tag current_user.avatar_url, class: 'img-rounded' %><br>
+      <%= f.file_field :avatar %>
+      <%= f.hidden_field :avatar_cache %>
+      <% if current_user.avatar? %>
+        <label><%= t('simple_form.labels.user.remove_avatar') %></label>
+        <%= f.check_box :remove_avatar %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-12 text-right">
+      <%= f.button :submit, class: 'btn btn-primary' %>
+      <%= link_to t('links.back'), root_path, class: 'btn btn-default' %>
+    </div>
+  </div><br>
+<% end %>

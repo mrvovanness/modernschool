@@ -1,0 +1,8 @@
+<%= page_header t('views.exams.edit_exam') %>
+<% if policy(@exam).update? %>
+  <%= render 'form', exam: @exam %>
+
+  <%= link_to t('links.destroy'), exam_path, method: :delete,
+    data: { confirm: 'Hey, sure?' },
+    class: 'btn btn-danger' %>
+<% end %>

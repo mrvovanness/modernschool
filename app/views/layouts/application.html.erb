@@ -22,7 +22,7 @@
       <% if current_user %>
         <%= menu_item t('navbar.schedule') %>
         <%= menu_item t('navbar.courses'), courses_path %>
-        <%= menu_item t('navbar.teachers') %>
+        <%= menu_item t('navbar.teachers'), user_profiles_path %>
       <% else %>
         <%= menu_item t('navbar.sign_in'), new_user_session_path %>
         <%= menu_item t('navbar.sign_up'), new_user_registration_path %>
@@ -37,7 +37,8 @@
           <%= menu_item t('navbar.add_news'), new_post_path %>
           <%= menu_item t('navbar.add_course'), new_course_path %>
           <%= menu_item t('navbar.add_lesson'), new_lesson_path %>
-          <%= menu_item t('navbar.add_exam') %>
+          <%= menu_item t('navbar.add_exam'), new_exam_path %>
+          <%= menu_item t('navbar.my_profile'), edit_user_profile_path(current_user) %>
           <% end %>
         <% end %>
       <% end %>

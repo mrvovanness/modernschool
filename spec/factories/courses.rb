@@ -1,8 +1,7 @@
 FactoryGirl.define do
   factory :course do
+    user
     title "MyString"
-description "MyText"
-user_id 1
+    description "MyText"
   end
-
 end

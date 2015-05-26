@@ -6,7 +6,6 @@
 
     <%= label_tag t('simple_form.labels.post.body') %>
     <div id="epiceditor"></div>
-    <%= f.input_field :user_id, as: :hidden, value: current_user.id %>
     <%= f.input_field :body_markdown, as: :hidden, id: "epiceditor_textarea" %><br>
 
     <%= label_tag t('simple_form.labels.post.picture') %>

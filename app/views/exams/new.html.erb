@@ -1,0 +1,5 @@
+<%= page_header t('views.exams.add_exam') %>
+<% if policy(@exam).create? %>
+  <%= render 'form', exam: @exam %>
+  <%= link_to t('links.back'), exams_path, class: 'btn btn-default' %>
+<% end %>

@@ -1,0 +1,29 @@
+<%= page_header @user.full_name %>
+
+<div class="row well well-lg">
+  <div class="col-sm-3">
+    <%= image_tag @user.avatar_url, class: 'img-circle' %>
+  </div>
+  <div class="col-sm-9">
+    <table class="table table-striped">
+
+      <tr>
+        <th><%= t('simple_form.user.labels.biography') %></th> 
+        <td><p><%= @user.biography %></p></td>
+      </tr>
+
+      <tr>
+        <th><%= t('simple_form.user.labels.about') %></th> 
+        <td><%= @user.about %></td>
+      </tr>
+
+    </table>
+    <div class="row text-right">
+      <div class="col-sm-12">
+        <% if current_user.id == @user.id %>
+          <%= link_to t('links.edit'), edit_user_profile_path(@user), class: 'btn btn-default' %>
+        <% end %>
+        <%= link_to t('links.back'), user_profiles_path, class: 'btn btn-primary' %> 
+      </div>
+    </div>
+</div>

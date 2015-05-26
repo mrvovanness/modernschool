@@ -20,7 +20,7 @@ class CoursesController < ApplicationController
   end
 
   def create
-    @course = Course.new(course_params)
+    @course = current_user.courses.new(course_params)
     authorize @course
     if @course.save
       flash[:notice] = t('flash.success')
@@ -42,7 +42,7 @@ class CoursesController < ApplicationController
 
   def destroy
     @course.destroy
-    redirect_to courses_url
+    redirect_to courses_path
     flash[:notice] = t('flash.destroyed')
   end
 
