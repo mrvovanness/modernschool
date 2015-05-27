@@ -3,6 +3,7 @@ class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
 
   def show
+    @comments = Comment.where(lesson_id: @lesson.id).all.order(created_at: :desc)
     @comment = Comment.new
   end
 
