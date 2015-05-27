@@ -1,0 +1,12 @@
+<% @comments.each do |comment| %>
+  <div class="well">
+    <p class="text-muted"><%= comment.commenter_name %></p>
+    <blockquote><%= comment.body %></blockquote>
+    <time><%= l(comment.created_at, format: '%B %d %Y %H:%M') %></time>
+    <% if policy(@lesson).update? %>
+      <p class="text-right"><%= link_to t('links.destroy'), comment_path(comment), method: :delete,
+        data: { confirm: 'Hey, sure?' },
+        class: 'btn btn-danger' %></p>
+    <% end %>
+  </div>
+<% end %>
