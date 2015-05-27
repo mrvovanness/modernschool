@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!
 
   def create
     @comment = Comment.new(comment_params)
@@ -8,7 +7,7 @@ class CommentsController < ApplicationController
     end
     redirect_to :back
   end
- 
+
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy

@@ -1,10 +1,10 @@
-<%= simple_form_for @comment do |f| %>
+<%= simple_form_for comment do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :commenter_name, autofocus: true %>
     <%= f.input :body %><br>
-    <%= f.input_field :lesson_id, as: :hidden, value: @lesson.id %>
+    <%= f.input_field :lesson_id, as: :hidden, value: lesson.id %>
   </div>
 
   <div class="form-actions">

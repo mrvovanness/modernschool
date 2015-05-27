@@ -1,19 +1,18 @@
 class LessonsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
 
   def show
-    @comments = Comment.where(lesson_id: @lesson.id).all.order(created_at: :desc)
+    @comments = Comment.for_lesson(@lesson.id)
     @comment = Comment.new
   end
 
   def new
     @lesson = Lesson.new
-    redirect_to lessons_path unless policy(@lesson).create?
+    redirect_to courses_path unless policy(@lesson).create?
   end
 
   def edit
-    redirect_to lessons_path unless policy(@lesson).update?
+    redirect_to courses_path unless policy(@lesson).update?
   end
 
   def create

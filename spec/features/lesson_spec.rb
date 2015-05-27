@@ -4,6 +4,7 @@ describe Lesson do
   let!(:lesson) { create(:lesson) }
   before(:each) do
     login("ex@mail.com", "bigsecret")
+    visit root_path
   end
   it "edit" do
     visit edit_lesson_path(lesson)
@@ -11,8 +12,8 @@ describe Lesson do
   end
 
   it "edit only his/her own" do
-    lesson.update_attribute(:course_id, 666)
+    lesson.course.update_attribute(:user_id, 666)
     visit edit_lesson_path(lesson)
-    expect(page).not_to have_content "Edit News"
+    expect(page).not_to have_content "Edit Lesson"
   end
 end

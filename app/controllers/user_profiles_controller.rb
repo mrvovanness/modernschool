@@ -1,10 +1,9 @@
 class UserProfilesController < ApplicationController
-  before_action :authenticate_user!
 
   def index
     @teachers = User.all_teachers
-    
   end
+
   def edit
     @user = User.find(params[:id])
     redirect_to root_path unless current_user.id == @user.id

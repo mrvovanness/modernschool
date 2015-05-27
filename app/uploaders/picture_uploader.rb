@@ -2,7 +2,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   def store_dir
-    "modernschool/#{model.class.to_s.underscore.pluralize}/#{mounted_as.to_s.pluralize}/"
+    "#{ENV['APP_NAME']}/#{model.class.to_s.underscore.pluralize}/#{mounted_as.to_s.pluralize}/"
   end
 
   def default_url(*args)

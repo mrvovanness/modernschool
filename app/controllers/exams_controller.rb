@@ -1,5 +1,4 @@
 class ExamsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_exam, only: [:show, :edit, :update, :destroy]
 
   def index

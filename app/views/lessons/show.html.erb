@@ -18,5 +18,5 @@
   <%= link_to t('links.back'), course_path(@lesson.course_id), class: 'btn btn-primary' %>
 </div>
 
-<%= render 'comments/form' %>
-<%= render 'comments/index' %>
+<%= render 'comments/form', comment: @comment, lesson: @lesson %>
+<%= render 'comments/index', comments: @comments %>
