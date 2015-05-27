@@ -6,9 +6,9 @@ require 'open-uri'
 # end
 
 
-# ['teacher', 'student'].each do |role|
-#   Role.find_or_create_by( {name: role} )
-# end
+['teacher', 'student'].each do |role|
+  Role.find_or_create_by( {name: role} )
+end
 
 # titles = Nokogiri::HTML(open("https://htmlacademy.ru/courses/4")).xpath('//tr')[1..14].map do |t|
 #   t.css('a')[0].text
