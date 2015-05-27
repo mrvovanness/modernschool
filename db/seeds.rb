@@ -22,7 +22,14 @@ require 'open-uri'
 #   Lesson.create(title: titles[i+1], description: descriptions[i+1], course_id: 16)
 # end
 
-answers = Nokogiri::HTML(open("https://toster.ru/q/216153"))
-answers.xpath('//article').each do |a|
-  Comment.create(lesson_id: 17, body: a.css('div.answer__text').text.strip, commenter_name: a.css('a.user-summary__name').text.strip)
-end
+# answers = Nokogiri::HTML(open("https://toster.ru/q/216153"))
+# answers.xpath('//article').each do |a|
+#   Comment.create(lesson_id: 17, body: a.css('div.answer__text').text.strip, commenter_name: a.css('a.user-summary__name').text.strip)
+# end
+
+# news = Nokogiri::HTML(open("http://ria.ru/education")).css('div.list_item_content')
+# news.each do |n|
+#   Post.create(user_id: 3, title: n.css('h3.list_item_title a').text, body_markdown: n.css('div.list_item_announce').text)
+# end
+
+puts exams =  Nokogiri::HTML(open("http://studydep.miigaik.ru/akzamen/")).css('table.t')
