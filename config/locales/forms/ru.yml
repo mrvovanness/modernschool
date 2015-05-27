@@ -5,6 +5,7 @@ ru:
         email: "Твоя почта"
         password: "Твой пароль"
         password_confirmation: "Повтори пароль"
+        current_password: "Твой старый пароль"
         role: "Учитель или студент?"
         remember_me: "Запомнить меня"
       post:
@@ -14,3 +15,6 @@ ru:
         remove_picture: "Удалить картинку"
         attachment: "Прикрепить документ"
         remove_attachment: "Удалить документ"
+    hints:
+      user:
+        current_password: "Нужен для подтверждения изменений"

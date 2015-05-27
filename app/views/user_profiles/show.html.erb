@@ -13,10 +13,18 @@
       </tr>
 
       <tr>
-        <th><%= t('simple_form.user.labels.about') %></th> 
+        <th><%= t('views.user_profiles.about') %></th> 
         <td><%= @user.about %></td>
       </tr>
 
+      <tr>
+        <th><%= t('views.user_profiles.lessons') %></th> 
+        <td>
+          <% @user.lessons.each do |lesson| %>
+            <li><%= link_to lesson.title, lesson_path(lesson) %></li>
+          <% end %>
+        </td>
+      </tr>
     </table>
     <div class="row text-right">
       <div class="col-sm-12">

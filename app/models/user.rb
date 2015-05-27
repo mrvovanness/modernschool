@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   has_many :courses
   has_many :lessons, through: :courses
   has_many :exams
+  has_many :comments
 
   # Scopes
   scope :all_teachers, -> { joins(:roles).where({"roles.name" => "teacher"}) }

@@ -3,10 +3,17 @@
 <div class="well well-lg">
   <%= video_tag @lesson.video_url, controls: true %>
   <p><%= @lesson.description %></p>
-  <time><%= l(@lesson.created_at, format: '%-d %B %Y') %></time><br>
+  <div class="row">
+    <div class="col-sm-6">
+      <time><%= l(@lesson.created_at, format: '%-d %B %Y') %></time><br>
+    </div>
+    <div class="col-sm-6 text-right">
+      <b><%= @lesson.course.user.full_name %></b>
+    </div>
+  </div>
 
   <% if policy(@lesson).update? %>
-    <%= link_to t('links.edit'), edit_lesson_path(@lesson) %> |
+    <%= link_to t('links.edit'), edit_lesson_path(@lesson), class: 'btn btn-default' %>
   <% end %>
-  <%= link_to t('links.back'), course_path(@lesson.course_id) %>
+  <%= link_to t('links.back'), course_path(@lesson.course_id), class: 'btn btn-primary' %>
 </div>
