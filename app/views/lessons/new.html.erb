@@ -1,4 +1,4 @@
-<%= page_header t('views.lessons.add_lesson') %>
+<%= page_header t('navbar.add_lesson') %>
 <% if policy(@lesson).create? %>
   <%= render 'form', lesson: @lesson %>
   <%= link_to t('links.back'), lessons_path, class: 'btn btn-default' %>

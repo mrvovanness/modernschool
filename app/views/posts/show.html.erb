@@ -6,9 +6,9 @@
   <% if @post.document.present? %>
     <%= link_to t('links.download_file'), @post.document_url %>
   <% end %>
-</div>
 
 <% if policy(@post).update? %>
-  <%= link_to t('links.edit'), edit_post_path(@post) %> |
+  <%= link_to t('links.edit'), edit_post_path(@post), class: 'btn btn-default' %>
 <% end %>
-<%= link_to t('links.back'), posts_path %>
+<%= link_to t('links.back'), posts_path, class: 'btn btn-primary' %>
+</div>

@@ -1,0 +1,14 @@
+ru:
+  views:
+    posts:
+      news_feed: "Новости проекта"
+      edit: "Редактировать новость"
+    exams:
+      all_exams: "Предстоящие экзамены"
+    courses:
+      lessons_of_the_course: "Уроки данного курса"
+      edit: "Редактировать информацию о курсе"
+    lessons:
+      edit: "Редактрировать урок"
+    exams:
+      edit: "Редактировать экзамен"

@@ -8,6 +8,13 @@ ru:
         current_password: "Твой старый пароль"
         role: "Учитель или студент?"
         remember_me: "Запомнить меня"
+        roles: "Твоя роль"
+        first_name: "Имя"
+        second_name: "Фамилия"
+        biography: "Биография"
+        about: "Обо мне"
+        your_avatar: "Аватар"
+        remove_avatar: "Удалить аватар?"
       post:
         title: "Заголовок"
         body: "* Текст"
@@ -15,6 +22,36 @@ ru:
         remove_picture: "Удалить картинку"
         attachment: "Прикрепить документ"
         remove_attachment: "Удалить документ"
+      course:
+        title: "Название курса"
+        description: "Описание"
+      lesson:
+        title: "Название курса"
+        course: "Курс (можно создать новый курс чере меню)"
+        description: "Описание для видео"
+        video: "Добавьте видео"
+      exam:
+        title: "Название"
+        description: "Описание"
+        date: "Дата экзамена"
     hints:
       user:
         current_password: "Нужен для подтверждения изменений"
+  helpers:
+    submit:
+      user:
+        create: "Продолжить"
+        update: "Обновить"
+        submit: "Войти"
+      post:
+        create: "Добавить новость"
+        update: "Обновить новость"
+      course:
+        create: "Создать курс"
+        update: "Обновить"
+      lesson:
+        create: "Опубликовать урок"
+        update: "Обновить урок"
+      exam:
+        create: "Готово"
+        update: "Обновить"

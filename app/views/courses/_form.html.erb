@@ -1,5 +1,4 @@
 <%= simple_form_for course do |f| %>
-  <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :title, autofocus: true %>
@@ -8,6 +7,6 @@
 
   <div class="form-actions">
     <%= f.button :submit, class: 'btn btn-primary' %>
-    <%= link_to t('links.back'), courses_path, class: 'btn btn-default' %>
+    <%= link_to t('links.back'), :back, class: 'btn btn-default' %>
   </div><br>
 <% end %>
