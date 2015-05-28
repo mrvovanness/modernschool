@@ -10,10 +10,10 @@ describe User do
     before(:each) { user.add_role(:student) }
 
     it "login" do
-      expect(page).to have_content "News Feed"
+      expect(page).to have_content t('views.posts.news_feed')
     end
 
-    it "only login(without adding of modifying content)" do
+    it "only login(without adding of modifying content)", focus: true do
       visit new_post_path
       expect(page).not_to have_content "Add Post"
     end

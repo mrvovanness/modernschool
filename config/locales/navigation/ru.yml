@@ -22,3 +22,6 @@ ru:
     destroy: "Удалить"
     cancel_account: "Удалить аккаунт"
     send_reset_instructions: "Выслать инструкции по смене пароля"
+  will_paginate:
+    next_label: "Вперед"
+    previous_label: "Назад"

@@ -1,5 +1,5 @@
 <%= page_header t('views.posts.news_feed') %>
-
+<%= will_paginate @posts %>
 <% @posts.each do |post| %>
   <div class="row well well-lg">
     <div class="col-sm-3">
@@ -16,3 +16,4 @@
     </div>
   </div>
 <% end %>
+<%= will_paginate @posts %>

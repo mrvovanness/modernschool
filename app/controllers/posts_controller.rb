@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.order(updated_at: :desc)
+    @posts = Post.paginate(page: params[:page], per_page: 10).order(updated_at: :desc)
   end
 
   def show

@@ -8,14 +8,16 @@
       <time><%= l(@lesson.created_at, format: '%-d %B %Y') %></time><br>
     </div>
     <div class="col-sm-6 text-right">
-      <b><%= @lesson.course.user.full_name %></b>
+      <b><%= @lesson.course.user.full_name %></b><br>
     </div>
   </div>
 
-  <% if policy(@lesson).update? %>
-    <%= link_to t('links.edit'), edit_lesson_path(@lesson), class: 'btn btn-default' %>
-  <% end %>
-  <%= link_to t('links.back'), course_path(@lesson.course_id), class: 'btn btn-primary' %>
+  <div class="text-right">
+    <% if policy(@lesson).update? %>
+      <%= link_to t('links.edit'), edit_lesson_path(@lesson), class: 'btn btn-default' %>
+    <% end %>
+    <%= link_to t('links.back'), course_path(@lesson.course_id), class: 'btn btn-primary' %>
+  </div>
 </div>
 
 <%= render 'comments/form', comment: @comment, lesson: @lesson %>

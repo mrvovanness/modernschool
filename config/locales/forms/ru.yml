@@ -34,6 +34,9 @@ ru:
         title: "Название"
         description: "Описание"
         date: "Дата экзамена"
+      comment:
+        commenter_name: "Ваше имя"
+        body: "Комментарий"
     hints:
       user:
         current_password: "Нужен для подтверждения изменений"
@@ -55,3 +58,5 @@ ru:
       exam:
         create: "Готово"
         update: "Обновить"
+      comment:
+        create: "Комментировать"
