@@ -8,12 +8,12 @@ describe Lesson do
   end
   it "edit" do
     visit edit_lesson_path(lesson)
-    expect(page).to have_content "Edit Lesson"
+    expect(page).to have_content I18n.t('views.lessons.edit')
   end
 
   it "edit only his/her own" do
     lesson.course.update_attribute(:user_id, 666)
     visit edit_lesson_path(lesson)
-    expect(page).not_to have_content "Edit Lesson"
+    expect(page).not_to have_content I18n.t('views.lessons.edit')
   end
 end
