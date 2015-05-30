@@ -26,10 +26,11 @@ ru:
         title: "Название курса"
         description: "Описание"
       lesson:
-        title: "Название курса"
+        title: "Название урока"
         course: "Курс (можно создать новый курс чере меню)"
         description: "Описание для видео"
         video: "Добавьте видео"
+        remove_video: "Удалить видео"
       exam:
         title: "Название"
         description: "Описание"

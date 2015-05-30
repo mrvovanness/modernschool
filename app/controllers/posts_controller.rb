@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.paginate(page: params[:page], per_page: 10).order(updated_at: :desc)
+    @lessons = Lesson.order(created_at: :desc).first(10)
   end
 
   def show

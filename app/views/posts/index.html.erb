@@ -1,5 +1,4 @@
 <%= page_header t('views.posts.news_feed') %>
-<%= will_paginate @posts %>
 <% @posts.each do |post| %>
   <div class="row well well-lg">
     <div class="col-sm-3">
@@ -17,3 +16,15 @@
   </div>
 <% end %>
 <%= will_paginate @posts %>
+
+<% content_for :right_content do %>
+  <h3><%= t('views.lessons.new_lessons') %></h3>
+  <% @lessons.each do |lesson| %>
+    <% if lesson.video.present? %>
+      <div class="well">
+        <%= video_tag lesson.video, controls: true %>
+        <%= link_to lesson.title, lesson_path(lesson) %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
