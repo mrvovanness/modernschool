@@ -16,6 +16,9 @@
 //= require twitter/bootstrap
 //= require_tree .
 //= require 'epiceditor'
+//= require moment
+//= require fullcalendar
+//= require fullcalendar/lang/ru
 
 $(document).on("ready page:load", function() {
   if ($("#epiceditor_textarea").length > 0) {
@@ -27,4 +30,7 @@ $(document).on("ready page:load", function() {
       clientSideStorage: false
     }).load();
   }
+  $('#calendar').fullCalendar({
+    events: '/exams.json'
+  });
 })

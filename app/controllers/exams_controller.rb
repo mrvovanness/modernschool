@@ -3,6 +3,10 @@ class ExamsController < ApplicationController
 
   def index
     @exams = Exam.upcoming.order(:date)
+    respond_to do |format|
+      format.json
+      format.html
+    end
   end
 
   def show
