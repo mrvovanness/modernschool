@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
+  #active_admin config
+  def authenticate_admin_user!
+    redirect_to root_path unless current_user.has_role?(:admin)
+  end
   protected
 
   def configure_permitted_parameters
