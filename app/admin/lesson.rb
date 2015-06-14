@@ -5,4 +5,6 @@ ActiveAdmin.register Lesson do
     column :title
     actions
   end
+
+  permit_params :title, :description, :course_id
 end

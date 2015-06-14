@@ -5,4 +5,6 @@ ActiveAdmin.register Post do
     column :title
     actions
   end
+
+  permit_params :title, :body_markdown, :course_id
 end
