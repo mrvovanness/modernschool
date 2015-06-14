@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   devise_for :users
   root 'posts#index'
   resources :posts, :courses, :lessons, :exams, :user_profiles

@@ -32,14 +32,21 @@
     <%= menu_group pull: :right do %>
     <% if current_user %>
       <%= menu_item t('navbar.logout'), destroy_user_session_path, method: :delete %>
+
+      <% if current_user.has_role?(:admin) %>
+        <%= menu_item t('navbar.admin_panel'), admin_dashboard_path %>
+      <% end %>
+
       <%= drop_down t('navbar.menu') do %>
+
         <% if current_user.has_role?(:teacher) %>
           <%= menu_item t('navbar.add_news'), new_post_path %>
           <%= menu_item t('navbar.add_course'), new_course_path %>
           <%= menu_item t('navbar.add_lesson'), new_lesson_path %>
           <%= menu_item t('navbar.add_exam'), new_exam_path %>
           <%= menu_item t('navbar.my_profile'), edit_user_profile_path(current_user) %>
-          <% end %>
+        <% end %>
+
         <%= menu_item t('navbar.change_password'), edit_user_registration_path %>
         <% end %>
       <% end %>
