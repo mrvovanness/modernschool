@@ -6,5 +6,5 @@ ActiveAdmin.register Post do
     actions
   end
 
-  permit_params :title, :body_markdown, :course_id
+  permit_params :title, :body_markdown, :user_id
 end
